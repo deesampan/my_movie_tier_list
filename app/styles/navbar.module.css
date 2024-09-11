@@ -1,0 +1,47 @@
+/* components/Navbar.module.css */
+
+/* Centering the navbar container at the top */
+.navbarContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 70px; /* Adjust this to control vertical position */
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  /* Navbar styling with rounded corners */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #333;
+    padding: 10px 20px;
+    border-radius: 50px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adding a subtle shadow */
+    list-style: none;
+    margin: 0;
+  }
+  
+  /* Individual nav items */
+  .navItem {
+    margin: 0 15px;
+  }
+  
+  .navItem h1 {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 8px 16px;
+    transition: background-color 0.3s ease;
+    border-radius: 20px;
+  }
+  
+  /* Hover effect */
+  .navItem h1:hover {
+    color: #a63d33;
+    font-weight: bolder;
+    background-color: rgb(255, 255, 255);
+  }
+  

@@ -1,0 +1,32 @@
+.container{
+    /* background-color: rgb(95, 95, 95); */
+    margin-top: 50px;
+    height: 430px;
+}
+
+.title {
+    color: rgb(255, 255, 255);
+    
+    font-size: 35px;
+    font-family: serif;
+    margin-left: 20px;
+    font-weight: bolder;
+}
+
+.listfilm{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content{
+    background-color: white;
+    height: 320px;
+    width: 260px;
+
+    border-radius: 25px;
+
+    display: inline-block;
+    margin-right: 20px;
+}

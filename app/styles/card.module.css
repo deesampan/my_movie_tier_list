@@ -1,0 +1,41 @@
+/* From Uiverse.io by SteveBloX */ 
+.card {
+    box-sizing: border-box;
+    width: 260px;
+    height: 320px;
+    background: rgb(255, 255, 255);
+    border: 1px solid white;
+    box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+    backdrop-filter: blur(6px);
+    border-radius: 17px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    font-weight: bolder;
+    color: rgb(255, 255, 255);
+
+    margin-right: 20px;
+  }
+  
+  .card:hover {
+    border: 1px solid rgba(255, 49, 49, 0.463);
+    transform: scale(1.05);
+  }
+  
+  .card:active {
+    transform: scale(.95) rotateZ(1.7deg);
+  }
+
+  .colorr{
+    color:black
+  }
+
+  .img_board{
+    height: 100%;
+    width: 100%;
+    background-color: black;
+  }
