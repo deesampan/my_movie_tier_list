@@ -11,11 +11,11 @@ export default function Home() {
 
       <Blankspace animated="true" />
 
-      <Film_line title="Movies🎬"/>
+      <Film_line title="Movies🎬" linker="/movies"/>
       <Blankspace animated="false" />
-      <Film_line title="Series🎬"/>
+      <Film_line title="Series🎬" linker="/series"/>
       <Blankspace animated="false" />
-      <Film_line title="Animations🎬"/>
+      <Film_line title="Animations🎬" linker="/cartoon"/>
     </div>
   );
 }

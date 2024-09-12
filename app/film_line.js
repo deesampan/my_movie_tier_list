@@ -1,7 +1,7 @@
 import styles from "./styles/filmline.module.css"
 import Card from "./card";
 
-const Film_line = ({title}) => {
+const Film_line = ({title,linker}) => {
   return (
     <div className={styles.container}>
         <h1 className={styles.title}>{title}</h1>
@@ -11,7 +11,7 @@ const Film_line = ({title}) => {
             <Card index="3"/>
             <Card index="4"/>
             <Card index="5"/>
-            <Card link="/movies"/>
+            <Card link={linker}/>
         </div>
     </div>
   );
