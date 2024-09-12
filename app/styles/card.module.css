@@ -1,9 +1,11 @@
 /* From Uiverse.io by SteveBloX */ 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,309;1,309&display=swap');
+
 .card {
     box-sizing: border-box;
     width: 260px;
     height: 320px;
-    background: rgb(255, 255, 255);
+    background: rgba(69, 69, 69, 0.119);
     border: 1px solid white;
     box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
     backdrop-filter: blur(6px);
@@ -31,11 +33,37 @@
   }
 
   .colorr{
-    color:black
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 10px;
+    z-index: 100;
+    color:white;
+    font-weight: bolder;
+    font-size: 60px;
+    -webkit-text-stroke: 3px black;
+  }
+  .seemore{
+
+    margin-left: 10px;
+    z-index: 100;
+    color:rgb(255, 255, 255);
+    font-size: 20px;
+
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style:normal;
+  }
+  .cover_link{
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .img_board{
-    height: 100%;
-    width: 100%;
-    background-color: black;
+    border-radius: 17px;
   }

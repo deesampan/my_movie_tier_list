@@ -1,19 +1,22 @@
 import styles from "./styles/card.module.css"
 import Image from "next/image";
+import Link from "next/link";
 
-const Card = ({seemore}) => {
+const Card = ({link,index}) => {
+
     let texting = "";
-    if(seemore=="true"){
-        texting = <h1 className={styles.colorr}>See More 🔎</h1>
+    if(link != null){
+        texting = <Link href={link} className={styles.cover_link}><h1 className={styles.seemore}>See More 🔎</h1></Link>
     }else{
-        texting = <h1 className={styles.colorr}>Something Else</h1>
+        texting = <div><h1 className={styles.colorr}>{index}</h1>
+            <Image className={styles.img_board} src="/rick_n_morty.jpg" fill/></div>
     }
     return (
         <div className={styles.card}>
-            {/* {texting} */}
-            <Image src="/images/rick_n_morty.jpg" width={500} height={500}/>
+            {texting}
         </div>
-    );
+
+    ); 
 };
 
 export default Card;

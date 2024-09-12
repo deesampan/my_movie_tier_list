@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&display=swap');
+
 .container{
     display: flex;
     justify-content: center;
@@ -13,5 +15,8 @@
     color: rgb(255, 58, 58);
 
     font-size: 50px;
-    font-family: serif;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
 }

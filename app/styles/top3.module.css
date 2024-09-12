@@ -1,0 +1,32 @@
+.container{
+    margin-top: 150px;
+    height: 750px;
+    /* background-color: white; */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.top_card{
+    margin-top: 40px;
+    position: absolute;
+    justify-self: center;
+    align-self: flex-start;
+    display: flex;
+    
+    align-items: center;
+}
+.top_card > h1{
+    font-size: 80px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.rest_card{
+    top: -50px;
+    position: relative;
+    align-self: flex-end;
+    justify-self: center;
+    display: inline-block;
+    margin-left: 50px;
+    margin-right: 50px;
+}

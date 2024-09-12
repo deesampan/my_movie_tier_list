@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300&display=swap');
+
 .container{
     /* background-color: rgb(95, 95, 95); */
     margin-top: 50px;
@@ -6,11 +8,16 @@
 
 .title {
     color: rgb(255, 255, 255);
+
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 300;
     
     font-size: 35px;
-    font-family: serif;
-    margin-left: 20px;
-    font-weight: bolder;
+    margin-left: 90px;
 }
 
 .listfilm{

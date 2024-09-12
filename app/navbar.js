@@ -3,33 +3,37 @@
 import Link from 'next/link';
 import styles from './styles/navbar.module.css'; // Import CSS module
 
-const Navbar = () => {
+const Navbar = ({ highlighted }) => {
   return (
     <nav className={styles.navbarContainer}>
       <ul className={styles.navbar}>
         <li className={styles.navItem}>
           <Link href="/">
-            <h1>Home</h1>
+            <h1 style={{ fontWeight: highlighted === 'home' ? '900' : '100' }}>
+              Home
+            </h1>
           </Link>
         </li>
         <li className={styles.navItem}>
           <Link href="/movies">
-            <h1>Movies</h1>
+            <h1 style={{ fontWeight: highlighted === 'movie' ? '900' : '100' }}>Movies</h1>
           </Link>
         </li>
         <li className={styles.navItem}>
           <Link href="/series">
-            <h1>Series</h1>
+            <h1 style={{ fontWeight: highlighted === 'series' ? '900' : '100' }}>Series</h1>
           </Link>
         </li>
         <li className={styles.navItem}>
           <Link href="/cartoon">
-            <h1>Cartoon</h1>
+            <h1 style={{ fontWeight: highlighted === 'cartoon' ? '900' : '100' }}>
+              Cartoon
+            </h1>
           </Link>
         </li>
         <li className={styles.navItem}>
           <Link href="/creator">
-            <h1>Create my own</h1>
+            <h1 style={{ fontWeight: highlighted === 'creator' ? '900' : '100' }}>Create my own</h1>
           </Link>
         </li>
       </ul>

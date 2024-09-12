@@ -3,13 +3,11 @@ import Title from "./title";
 import Film_line from "./film_line";
 import Blankspace from "./blankspace"
 
-import styles from "./styles/filmline.module.css"
-
 export default function Home() {
   return (
     <div>
       <Title />
-      <Navbar/>
+      <Navbar highlighted="home"/>
 
       <Blankspace animated="true" />
 

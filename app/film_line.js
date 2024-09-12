@@ -6,12 +6,12 @@ const Film_line = ({title}) => {
     <div className={styles.container}>
         <h1 className={styles.title}>{title}</h1>
         <div className={styles.listfilm}>
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card seemore="true"/>
+            <Card index="1"/>
+            <Card index="2"/>
+            <Card index="3"/>
+            <Card index="4"/>
+            <Card index="5"/>
+            <Card link="/movies"/>
         </div>
     </div>
   );
