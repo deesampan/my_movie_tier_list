@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,309;1,309&display=swap');
+
+.container{
+    height: auto;
+    /* background-color: white; */
+}
+
+.content{
+    height: 220px;
+    width: 100%;
+    /* background-color: rgb(186, 186, 186); */
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.index{
+
+    margin-left: 10%;
+
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+    font-variation-settings:"wdth" 100;
+    font-size: 70px;
+}
+.movie_name{
+
+    margin-left: 60px;
+
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+    font-variation-settings:"wdth" 100;
+    font-size: 30px;
+}
+.des{
+
+    margin-left: 70px;
+    color: rgb(191, 191, 191);
+
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: italic;
+    font-variation-settings:"wdth" 100;
+    font-size: 20px;
+}
+.hr{
+    position:absolute;
+    width: 100%;
+    align-self: flex-end;
+    justify-content: center;
+    align-items: center;
+}
+.line{
+    background-color: white;
+    height: 1px;
+    width: 1300px;
+
+    margin: 0 auto;
+}
+
+.image{
+    margin-left: 60px;           
+
+    border-radius: 5px;
+}

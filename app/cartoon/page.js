@@ -3,11 +3,11 @@ import Title from "../title";
 import Top3 from "../top3"
 import RestRank from "../rest_rank";
 
-const movies_page = () => {
+const cartoon_page = () => {
   return (
     <div>
       <Title />
-      <Navbar highlighted="movie"/>
+      <Navbar highlighted="cartoon"/>
 
       <Top3/>
       <RestRank/>
@@ -15,4 +15,4 @@ const movies_page = () => {
   );
 }
 
-export default movies_page;
+export default cartoon_page;
