@@ -1,7 +1,7 @@
 import styles from "./styles/restrank.module.css"
 import Image from "next/image";
 
-const RestRank = ({data}) => {
+const RestRank = ({key,data}) => {
     const my_data = data.splice(3);
     return(
         <div className={styles.container}>
