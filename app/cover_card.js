@@ -24,7 +24,7 @@ const CoverCard = ({name,index,des,url}) => {
           <div className={styles.frontContent}>
             {/* front content here */}
             <h1 className={styles.movie_name}>{name}</h1>
-            <h2 className={styles.movie_des}>"{des}"</h2>
+            <h2 className={styles.movie_des}>&quot;{des}&quot;</h2>
           </div>
         </div>
       </div>
