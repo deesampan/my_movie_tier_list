@@ -11,7 +11,7 @@ const Film_line = ({title,linker,data}) => {
         <div className={styles.listfilm}>
             {
               data.slice(0,5).map((t)=>(
-                <Card index={t.rank} url={t.movie_url}/>
+                <Card index={t.rank} url={t.movie_url} key={t._id}/>
               ))
             }
             <Card link={linker}/>

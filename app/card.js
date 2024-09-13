@@ -2,7 +2,7 @@ import styles from "./styles/card.module.css"
 import Image from "next/image";
 import Link from "next/link";
 
-const Card = ({link,index,url}) => {
+const Card = ({link,index,url,key}) => {
 
     let texting = "";
     if(link != null){
