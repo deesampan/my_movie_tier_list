@@ -7,7 +7,7 @@ import Series from "@/models/series";
 
 const getSeries = async () =>{
   try{
-    const res = await fetch(`${process.env.API_URL}/series`);
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/series`);
     if(!res.ok){
       throw new Error("Failed to fetch topic")
     }
