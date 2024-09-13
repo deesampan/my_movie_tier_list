@@ -1,7 +1,7 @@
 import styles from "./styles/covercard.module.css";
 import Image from "next/image";
 
-const CoverCard = ({name,index}) => {
+const CoverCard = ({name,index,des}) => {
   return (
     <div className={styles.card}>
       <div className={styles.content}>
@@ -24,6 +24,7 @@ const CoverCard = ({name,index}) => {
           <div className={styles.frontContent}>
             {/* front content here */}
             <h1 className={styles.movie_name}>{name}</h1>
+            <h2 className={styles.movie_des}>"{des}"</h2>
           </div>
         </div>
       </div>

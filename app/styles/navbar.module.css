@@ -15,7 +15,7 @@
   .navbar {
     display: flex;
     justify-content: space-between;
-    background-color: #333;
+    background-color: #1e1e1ea8;
     padding: 10px 20px;
     border-radius: 50px; /* Rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adding a subtle shadow */

@@ -2,10 +2,12 @@ import Navbar from "./navbar";
 import Title from "./title";
 import Film_line from "./film_line";
 import Blankspace from "./blankspace"
+import styles from "./styles/background.module.css"
 
 export default function Home() {
   return (
-    <div>
+    <div className={styles.grad}>
+
       <Title />
       <Navbar highlighted="home"/>
 

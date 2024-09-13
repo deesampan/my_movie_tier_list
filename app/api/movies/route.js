@@ -3,12 +3,12 @@ import Topic from "@/models/topic";
 import { NextResponse } from "next/server";
 
 export async function POST(request){
-    const {movie_name,movie_url,movie_des,rank,movie_comment} = await request.json();
+    const {movie_name,movie_url,movie_des,rank} = await request.json();
     
     console.log("this is rank : ", rank);
 
     await connectMongoDB();
-    await Topic.create({movie_name,movie_url,movie_des,rank,movie_comment})
+    await Topic.create({movie_name,movie_url,movie_des,rank})
     return NextResponse.json({message:"Movie Created"},{status:201});
 }
 

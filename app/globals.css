@@ -5,12 +5,15 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #202020;
+    --background: #292929;
     --foreground: #ededed;
+
+    
   }
 }
 
@@ -18,6 +21,70 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+
+  background-image: url("https://i.ibb.co/WKdJsPb/moana-2-8k-2024-7680x4320-17965.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 1050px;
+
+  animation: changeBackground 50s infinite;
+}
+
+@keyframes changeBackground {
+  0% {
+    background-image: url("https://i.ibb.co/WP06kr4/spiritaway.jpg");
+  }
+  6% {
+    background-image: url("https://i.ibb.co/WP06kr4/spiritaway.jpg");
+  }
+  12% {
+    background-image: url("https://i.ibb.co/dcRpgNg/18again3.jpg");
+  }
+  18% {
+    background-image: url("https://i.ibb.co/dcRpgNg/18again3.jpg");
+  }
+  24% {
+    background-image: url("https://i.ibb.co/dcRpgNg/18again3.jpg");
+  }
+  30% {
+    background-image: url("https://i.ibb.co/YfZjbSH/httyd2.jpg");
+  }
+  36% {
+    background-image: url("https://i.ibb.co/YfZjbSH/httyd2.jpg");
+  }
+  42% {
+    background-image: url("https://i.ibb.co/YfZjbSH/httyd2.jpg");
+  }
+  48% {
+    background-image: url("https://i.ibb.co/7vx5kYm/peterpan.jpg");
+  }
+  54% {
+    background-image: url("https://i.ibb.co/7vx5kYm/peterpan.jpg");
+  }
+  60% {
+    background-image: url("https://i.ibb.co/7vx5kYm/peterpan.jpg");
+  }
+  66% {
+    background-image: url("https://i.ibb.co/v3cdWQD/avenger.jpg");
+  }
+  72% {
+    background-image: url("https://i.ibb.co/v3cdWQD/avenger.jpg");
+  }
+  78% {
+    background-image: url("https://i.ibb.co/v3cdWQD/avenger.jpg");
+  }
+  84% {
+    background-image: url("https://i.ibb.co/RYszQYj/titanic.jpg");
+  }
+  90% {
+    background-image: url("https://i.ibb.co/RYszQYj/titanic.jpg");
+  }
+  96% {
+    background-image: url("https://i.ibb.co/RYszQYj/titanic.jpg");
+  }
+  100% {
+    background-image: url("https://i.ibb.co/WP06kr4/spiritaway.jpg");
+  }
+  
 }
 
 @layer utilities {
