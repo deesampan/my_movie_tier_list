@@ -1,5 +1,4 @@
 import styles from "./styles/restrank.module.css"
-import Image from "next/image";
 import RestCard from "./rest_card";
 
 const RestRank = ({data}) => {

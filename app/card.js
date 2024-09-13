@@ -8,8 +8,8 @@ const Card = ({link,index,url,key}) => {
     if(link != null){
         texting = <Link href={link} className={styles.cover_link}><h1 className={styles.seemore}>See More 🔎</h1></Link>
     }else{
-        texting = <div><h1 className={styles.colorr}>{index}</h1>
-            <Image className={styles.img_board} src={url} fill/></div>
+        texting = <><h1 className={styles.colorr}>{index}</h1>
+            <Image className={styles.img_board} src={url} fill sizes="100" alt=""/></>
     }
     return (
         <div className={styles.card}>

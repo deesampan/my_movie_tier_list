@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,309;1,309&display=swap');
 
 .card {
+    position: relative;
     box-sizing: border-box;
     width: 260px;
     height: 320px;
@@ -65,5 +66,6 @@
   }
 
   .img_board{
+    position: relative;
     border-radius: 17px;
   }
