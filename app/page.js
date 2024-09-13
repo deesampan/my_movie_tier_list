@@ -6,7 +6,7 @@ import styles from "./styles/background.module.css"
 
 const getMovies = async () =>{
   try{
-    const res = await fetch("http://localhost:3000/api/movies");
+    const res = await fetch(`${process.env.API_URL}/api/movies`);
     if(!res.ok){
       throw new Error("Failed to fetch topic")
     }
@@ -18,7 +18,7 @@ const getMovies = async () =>{
 }
 const getSeries = async () =>{
   try{
-    const res = await fetch("http://localhost:3000/api/series");
+    const res = await fetch(`${process.env.API_URL}/api/series`);
     if(!res.ok){
       throw new Error("Failed to fetch topic")
     }
@@ -30,7 +30,7 @@ const getSeries = async () =>{
 }
 const getCartoon = async () =>{
   try{
-    const res = await fetch("http://localhost:3000/api/cartoons");
+    const res = await fetch(`${process.env.API_URL}/api/cartoons`);
     if(!res.ok){
       throw new Error("Failed to fetch topic")
     }
