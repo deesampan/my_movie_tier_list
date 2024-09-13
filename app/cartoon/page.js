@@ -6,7 +6,7 @@ import styles from "../styles/background.module.css"
 
 const getCartoon = async () =>{
   try{
-    const res = await fetch("http://localhost:3000/api/cartoons");
+    const res = await fetch(`${process.env.API_URL}/api/cartoons`);
     if(!res.ok){
       throw new Error("Failed to fetch topic")
     }
