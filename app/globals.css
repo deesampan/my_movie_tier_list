@@ -10,7 +10,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #292929;
+    --background: #1a1a1a;
     --foreground: #ededed;
 
     
@@ -64,13 +64,13 @@ body {
     background-image: url("https://i.ibb.co/7vx5kYm/peterpan.jpg");
   }
   66% {
-    background-image: url("https://i.ibb.co/v3cdWQD/avenger.jpg");
+    background-image: url("https://i.ibb.co/xMWV7cj/ponyo.png");
   }
   72% {
-    background-image: url("https://i.ibb.co/v3cdWQD/avenger.jpg");
+    background-image: url("https://i.ibb.co/xMWV7cj/ponyo.png");
   }
   78% {
-    background-image: url("https://i.ibb.co/v3cdWQD/avenger.jpg");
+    background-image: url("https://i.ibb.co/xMWV7cj/ponyo.png");
   }
   84% {
     background-image: url("https://i.ibb.co/RYszQYj/titanic.jpg");

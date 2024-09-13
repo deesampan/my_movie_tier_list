@@ -4,7 +4,55 @@ import Film_line from "./film_line";
 import Blankspace from "./blankspace"
 import styles from "./styles/background.module.css"
 
-export default function Home() {
+const getMovies = async () =>{
+  try{
+    const res = await fetch("http://localhost:3000/api/movies",{
+      cache:"no-store",
+    });
+    if(!res.ok){
+      throw new Error("Failed to fetch topic")
+    }
+    console.log(res);
+    return res.json();
+  }catch(error){
+    console.log("Error on fetching data: ",error);
+  }
+}
+const getSeries = async () =>{
+  try{
+    const res = await fetch("http://localhost:3000/api/series",{
+      cache:"no-store",
+    });
+    if(!res.ok){
+      throw new Error("Failed to fetch topic")
+    }
+    console.log(res);
+    return res.json();
+  }catch(error){
+    console.log("Error on fetching data: ",error);
+  }
+}
+const getCartoon = async () =>{
+  try{
+    const res = await fetch("http://localhost:3000/api/cartoons",{
+      cache:"no-store",
+    });
+    if(!res.ok){
+      throw new Error("Failed to fetch topic")
+    }
+    console.log(res);
+    return res.json();
+  }catch(error){
+    console.log("Error on fetching data: ",error);
+  }
+}
+
+export default async function Home() {
+
+  const {topics} = await getMovies();
+  const {Seriess} = await getSeries();
+  const {Cartoons} = await getCartoon();
+  
   return (
     <div className={styles.grad}>
 
@@ -13,11 +61,11 @@ export default function Home() {
 
       <Blankspace animated="true" />
 
-      <Film_line title="Movies🎬" linker="/movies"/>
+      <Film_line title="Movies🎬" linker="/movies" data={topics}/>
       <Blankspace animated="false" />
-      <Film_line title="Series🎬" linker="/series"/>
+      <Film_line title="Series🎬" linker="/series" data={Seriess}/>
       <Blankspace animated="false" />
-      <Film_line title="Animations🎬" linker="/cartoon"/>
+      <Film_line title="Animations🎬" linker="/cartoon" data={Cartoons}/>
     </div>
   );
 }

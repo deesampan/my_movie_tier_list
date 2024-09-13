@@ -1,7 +1,7 @@
 import styles from "./styles/covercard.module.css";
 import Image from "next/image";
 
-const CoverCard = ({name,index,des}) => {
+const CoverCard = ({name,index,des,url}) => {
   return (
     <div className={styles.card}>
       <div className={styles.content}>
@@ -9,7 +9,7 @@ const CoverCard = ({name,index,des}) => {
           <div className={styles.backContent}>
             {/* back content here */}
             <h1 className={styles.indexText}>#{index}</h1>
-            <Image className={styles.imageCover} src="https://i.ibb.co/hRPGgcR/69696774-2754328487913342-6162020898472722432-n.png" width={255} height={290}/>
+            <Image className={styles.imageCover} src={url} width={255} height={290}/>
           </div>
         </div>
 

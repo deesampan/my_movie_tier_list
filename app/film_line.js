@@ -1,18 +1,22 @@
 import styles from "./styles/filmline.module.css"
 import Card from "./card";
 
-const Film_line = ({title,linker}) => {
+const Film_line = ({title,linker,data}) => {
+
+
+
   return (
     <div className={styles.container}>
         <h1 className={styles.title}>{title}</h1>
         <div className={styles.listfilm}>
-            <Card index="1"/>
-            <Card index="2"/>
-            <Card index="3"/>
-            <Card index="4"/>
-            <Card index="5"/>
+            {
+              data.slice(0,5).map((t)=>(
+                <Card index={t.rank} url={t.movie_url}/>
+              ))
+            }
             <Card link={linker}/>
         </div>
+        
     </div>
   );
 };
