@@ -6,7 +6,7 @@ import styles from "../styles/background.module.css"
 
 const getMovies = async () =>{
   try{
-    const res = await fetch(`/api/movies`);
+    const res = await fetch(`http://localhost:3000/api/movies`);
     if(!res.ok){
       throw new Error("Failed to fetch topic")
     }
