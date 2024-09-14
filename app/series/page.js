@@ -22,14 +22,14 @@ const getSeries = async () =>{
 
 const series_page = async () => {
 
-  // const {Seriess} = await getSeries();
+  const {Seriess} = await getSeries();
   return (
     <div className={styles.grad_all}>
       <Title />
       <Navbar highlighted="series"/>
 
-      {/* <Top3 data={Seriess}/>
-      <RestRank data={Seriess}/> */}
+      <Top3 data={Seriess}/>
+      <RestRank data={Seriess}/>
     </div>
   );
 }

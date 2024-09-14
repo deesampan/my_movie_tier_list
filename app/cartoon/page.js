@@ -21,15 +21,15 @@ const getCartoon = async () =>{
 
 const cartoon_page = async () => {
 
-  // const {Cartoons} = await getCartoon();
+  const {Cartoons} = await getCartoon();
 
   return (
     <div className={styles.grad_all}>
       <Title />
       <Navbar highlighted="cartoon"/>
 
-      {/* <Top3 data={Cartoons}/>
-      <RestRank data={Cartoons}/> */}
+      <Top3 data={Cartoons}/>
+      <RestRank data={Cartoons}/>
     </div>
   );
 }
