@@ -8,7 +8,9 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL
 
 const getMovies = async () =>{
   try{
-    const res = await fetch(`${API_URL}/api/movies`);
+    const res = await fetch(`${API_URL}/api/movies`,{
+      cache:"no-store"
+    });
     if(!res.ok){
       throw new Error("Failed to fetch movie")
     }
@@ -20,7 +22,9 @@ const getMovies = async () =>{
 }
 const getSeries = async () =>{
   try{
-    const res = await fetch(`${API_URL}/api/series`);
+    const res = await fetch(`${API_URL}/api/series`,{
+      cache:"no-store"
+    });
     if(!res.ok){
       throw new Error("Failed to fetch series")
     }
@@ -32,7 +36,9 @@ const getSeries = async () =>{
 }
 const getCartoon = async () =>{
   try{
-    const res = await fetch(`${API_URL}/api/cartoons`);
+    const res = await fetch(`${API_URL}/api/cartoons`,{
+      cache:"no-store"
+    });
     if(!res.ok){
       throw new Error("Failed to fetch cartoon")
     }
@@ -51,7 +57,7 @@ export default async function Home() {
   
   return (
     <div className={styles.grad}>
-
+      
       <Title />
       <Navbar highlighted="home"/>
 

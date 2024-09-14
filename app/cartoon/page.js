@@ -8,7 +8,9 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL
 
 const getCartoon = async () =>{
   try{
-    const res = await fetch(`${API_URL}/api/cartoons`);
+    const res = await fetch(`${API_URL}/api/cartoons`,{
+      cache:"no-store"
+    });
     if(!res.ok){
       throw new Error("Failed to fetch cartoon")
     }

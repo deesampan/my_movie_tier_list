@@ -1,0 +1,19 @@
+.container{
+    z-index: 999;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+
+    margin-bottom: 20px;
+    margin-right: 20px;
+    padding: 10px;
+}
+
+.musicer{
+    opacity: 40%; 
+}
+
+.musicer::-webkit-media-controls-panel {
+    opacity: 100%;
+    background-color: rgb(255, 255, 255)
+}

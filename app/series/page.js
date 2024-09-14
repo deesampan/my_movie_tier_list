@@ -9,7 +9,9 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL
 
 const getSeries = async () =>{
   try{
-    const res = await fetch(`${API_URL}/api/series`);
+    const res = await fetch(`${API_URL}/api/series`,{
+      cache:"no-store"
+    });
     if(!res.ok){
       throw new Error("Failed to fetch series")
     }
@@ -23,6 +25,10 @@ const getSeries = async () =>{
 const series_page = async () => {
 
   const {Seriess} = await getSeries();
+
+  var sorted_series = Seriess.sort(function(a,b) {return a.rank - b.rank});
+  console.log(sorted_series)
+
   return (
     <div className={styles.grad_all}>
       <Title />

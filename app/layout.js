@@ -1,6 +1,10 @@
 import localFont from "next/font/local";
 import "./globals.css";
 
+
+//music
+import MusicPlayer from "./musicPlayer";
+
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -21,6 +25,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
+        <MusicPlayer />
         {children}
       </body>
     </html>
