@@ -10,8 +10,7 @@ const getMovies = async () =>{
   try{
     const res = await fetch(`${API_URL}/api/movies`);
     if(!res.ok){
-      // throw new Error("Failed to fetch topic")
-      console.log("error on movie so what??")
+      throw new Error("Failed to fetch movie")
     }
     console.log(res);
     return res.json();

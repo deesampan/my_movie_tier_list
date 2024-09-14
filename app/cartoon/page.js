@@ -10,8 +10,7 @@ const getCartoon = async () =>{
   try{
     const res = await fetch(`${API_URL}/api/cartoons`);
     if(!res.ok){
-      // throw new Error("Failed to fetch topic")
-      console.log("error on carton so what??")
+      throw new Error("Failed to fetch cartoon")
     }
     console.log(res);
     return res.json();

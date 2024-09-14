@@ -10,8 +10,7 @@ const getMovies = async () =>{
   try{
     const res = await fetch(`${API_URL}/api/movies`);
     if(!res.ok){
-      // throw new Error("Failed to fetch topic")
-      console.log("error on movie so what??")
+      throw new Error("Failed to fetch movie")
     }
     console.log(res);
     return res.json();
@@ -23,8 +22,7 @@ const getSeries = async () =>{
   try{
     const res = await fetch(`${API_URL}/api/series`);
     if(!res.ok){
-      // throw new Error("Failed to fetch topic")
-      console.log("error on series so what??")
+      throw new Error("Failed to fetch series")
     }
     console.log(res);
     return res.json();
@@ -36,8 +34,7 @@ const getCartoon = async () =>{
   try{
     const res = await fetch(`${API_URL}/api/cartoons`);
     if(!res.ok){
-      // throw new Error("Failed to fetch topic")
-      console.log("error on carton so what??")
+      throw new Error("Failed to fetch cartoon")
     }
     console.log(res);
     return res.json();
