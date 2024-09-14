@@ -8,9 +8,7 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL
 
 const getMovies = async () =>{
   try{
-    const res = await fetch(`${API_URL}/api/movies`,{
-      cache:"no-store"
-    });
+    const res = await fetch(`${API_URL}/api/movies`);
     if(!res.ok){
       throw new Error("Failed to fetch movie")
     }
@@ -22,9 +20,7 @@ const getMovies = async () =>{
 }
 const getSeries = async () =>{
   try{
-    const res = await fetch(`${API_URL}/api/series`,{
-      cache:"no-store"
-    });
+    const res = await fetch(`${API_URL}/api/series`);
     if(!res.ok){
       throw new Error("Failed to fetch series")
     }
@@ -36,9 +32,7 @@ const getSeries = async () =>{
 }
 const getCartoon = async () =>{
   try{
-    const res = await fetch(`${API_URL}/api/cartoons`,{
-      cache:"no-store"
-    });
+    const res = await fetch(`${API_URL}/api/cartoons`);
     if(!res.ok){
       throw new Error("Failed to fetch cartoon")
     }

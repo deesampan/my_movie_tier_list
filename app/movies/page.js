@@ -8,9 +8,7 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL
 
 const getMovies = async () =>{
   try{
-    const res = await fetch(`${API_URL}/api/movies`,{
-      cache:"no-store"
-    });
+    const res = await fetch(`${API_URL}/api/movies`);
     if(!res.ok){
       throw new Error("Failed to fetch movie")
     }
