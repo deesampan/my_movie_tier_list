@@ -11,7 +11,8 @@ const getSeries = async () =>{
   try{
     const res = await fetch(`${API_URL}/api/series`);
     if(!res.ok){
-      throw new Error("Failed to fetch topic")
+      // throw new Error("Failed to fetch topic")
+      console.log("error on series so what??")
     }
     console.log(res);
     return res.json();
