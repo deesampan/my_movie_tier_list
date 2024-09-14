@@ -4,9 +4,11 @@ import Top3 from "../top3"
 import RestRank from "../rest_rank";
 import styles from "../styles/background.module.css"
 
+const API_URL = process.env.NEXT_PUBLIC_API_URL
+
 const getCartoon = async () =>{
   try{
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/cartoons`);
+    const res = await fetch(`${API_URL}/cartoons`);
     if(!res.ok){
       throw new Error("Failed to fetch topic")
     }

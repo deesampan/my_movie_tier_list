@@ -5,9 +5,11 @@ import RestRank from "../rest_rank";
 import styles from "../styles/background.module.css"
 import Series from "@/models/series";
 
+const API_URL = process.env.NEXT_PUBLIC_API_URL
+
 const getSeries = async () =>{
   try{
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/series`);
+    const res = await fetch(`${API_URL}/series`);
     if(!res.ok){
       throw new Error("Failed to fetch topic")
     }
