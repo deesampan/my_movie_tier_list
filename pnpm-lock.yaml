@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@madzadev/audio-player':
+        specifier: ^2.1.14
+        version: 2.1.14
       express:
         specifier: ^4.21.0
         version: 4.21.0
@@ -98,6 +101,10 @@ packages:
 
   '@jridgewell/trace-mapping@0.3.25':
     resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
+
+  '@madzadev/audio-player@2.1.14':
+    resolution: {integrity: sha512-92Mpy6n250oMXNVcWXpIoqsAryrG/9vuWOLV52A13x0pXyxK9rYf54pYxh7hOYjGx5nbmpOcCbj1kvYuf5MFeA==}
+    engines: {node: '>=18'}
 
   '@mongodb-js/saslprep@1.1.9':
     resolution: {integrity: sha512-tVkljjeEaAhCqTzajSdgbQ6gE6f3oneVwa3iXR6csiEwXXOFsiC6Uh9iAjAhXPtqa/XMDHWjjeNH/77m/Yq2dw==}
@@ -1903,6 +1910,11 @@ snapshots:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
+
+  '@madzadev/audio-player@2.1.14':
+    dependencies:
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
 
   '@mongodb-js/saslprep@1.1.9':
     dependencies:
