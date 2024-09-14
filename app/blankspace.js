@@ -10,7 +10,7 @@ const blankspace = ({animated}) => {
                 </div>
             </div>
         )
-    }else{
+    }else if(animated=="balls"){
         return (
     
             <div className={styles.blankspace}>
@@ -23,6 +23,13 @@ const blankspace = ({animated}) => {
                 <div className={styles.shadow}></div></div>
             </div>
           );
+    }else{
+        return(
+            <div className={styles.blankspace_pacman}>
+                <h1>Deesampan</h1>
+                <div className={styles.pacman}></div>
+            </div>
+        )
     }
 };
 

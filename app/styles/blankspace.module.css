@@ -2,9 +2,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 470px;
+    margin-top: 480px;
     margin-bottom: -80px;
     width: 100%;
+}
+.blankspace_pacman{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -50px;
+  margin-bottom: -80px;
+  width: 100%;
 }
 .blankspace_line{
     display: flex;
@@ -20,6 +28,9 @@
     width: 40%;
 }
 
+.blankspace_pacman > h1{
+  font-size: 20px;
+}
 
 /* From Uiverse.io by mobinkakei */ 
 .wrapper {
@@ -110,4 +121,92 @@
     right: 15%;
     animation-delay: .3s;
   }
+
+
+
+
+
+
+
+
+  
+  .pacman {
+    border-radius: 50%;
+    margin: 0 auto;
+    margin-top: 8em;
+    border-radius: 100em 100em 0 0;
+    background: #f00;
+    transform-origin: bottom;
+    animation: eating-top 2s infinite;
+}
+.pacman, .pacman::before {
+    width: 70px;
+    height: calc(35px);
+    background: rgb(240, 204, 21);
+}
+.pacman::before {
+    content: '';
+    display: block;
+    margin-top: calc(35px);
+    position: absolute;
+    transform-origin: top;
+    border-radius: 0 0 100em 100em;
+    transform: rotate(80deg);
+    animation: eating-bottom 2s infinite;
+}
+.pacman::after {
+    position: absolute;
+    border-radius: 100em;
+    content: '';
+    display: block;
+    height: 20px;
+    width: 20px;
+    margin-top: calc(25px);
+    margin-left: calc(25px);
+    transform-origin: center;
+    animation: center 2s infinite, ball 2s 0s infinite linear;
+}
+@keyframes eating-top {
+    0% {
+        transform: rotate(-40deg);
+   }
+    50% {
+        transform: rotate(0deg);
+   }
+    100% {
+        transform: rotate(-40deg);
+   }
+}
+@keyframes eating-bottom {
+    0% {
+        transform: rotate(80deg);
+   }
+    50% {
+        transform: rotate(0deg);
+   }
+    100% {
+        transform: rotate(80deg);
+   }
+}
+@keyframes center {
+    0% {
+        transform: rotate(40deg);
+   }
+    50% {
+        transform: rotate(0deg);
+   }
+    100% {
+        transform: rotate(40deg);
+   }
+}
+@keyframes ball {
+    0% {
+        opacity: .7;
+        box-shadow: 70px 0 0 0 #ffffff, 120px 0 0 0 white, 170px 0 0 0 white, 220px 0 0 0 white;
+   }
+    100% {
+        box-shadow: 20px 0 0 0 #ffffff, 70px 0 0 0 white, 120px 0 0 0 white, 170px 0 0 0 white;
+   }
+}
+
   

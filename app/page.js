@@ -50,18 +50,21 @@ export default async function Home() {
   const {Cartoons} = await getCartoon();
   
   return (
-    <div className={styles.grad}>
+    <div className={styles.grad_all}>
       
       <Title />
       <Navbar highlighted="home"/>
 
-      <Blankspace animated="true" />
+      <Blankspace animated="balls" />
 
       <Film_line title="Movies🎬" linker="/movies" data={topics}/>
       <Blankspace animated="false" />
       <Film_line title="Series🎬" linker="/series" data={Seriess}/>
       <Blankspace animated="false" />
       <Film_line title="Animations🎬" linker="/cartoon" data={Cartoons}/>
+
+
+      <Blankspace animated="true" />
     </div>
   );
 }
