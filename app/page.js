@@ -8,7 +8,7 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL
 
 const getMovies = async () =>{
   try{
-    const res = await fetch(`${API_URL}/movies`);
+    const res = await fetch(`${API_URL}/api/movies`);
     if(!res.ok){
       throw new Error("Failed to fetch topic")
     }
@@ -20,7 +20,7 @@ const getMovies = async () =>{
 }
 const getSeries = async () =>{
   try{
-    const res = await fetch(`${API_URL}/series`);
+    const res = await fetch(`${API_URL}/api/series`);
     if(!res.ok){
       throw new Error("Failed to fetch topic")
     }
@@ -32,7 +32,7 @@ const getSeries = async () =>{
 }
 const getCartoon = async () =>{
   try{
-    const res = await fetch(`${API_URL}/cartoons`);
+    const res = await fetch(`${API_URL}/api/cartoons`);
     if(!res.ok){
       throw new Error("Failed to fetch topic")
     }

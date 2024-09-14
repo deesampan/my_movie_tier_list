@@ -9,7 +9,7 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL
 
 const getSeries = async () =>{
   try{
-    const res = await fetch(`${API_URL}/series`);
+    const res = await fetch(`${API_URL}/api/series`);
     if(!res.ok){
       throw new Error("Failed to fetch topic")
     }
