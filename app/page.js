@@ -4,7 +4,7 @@ import Film_line from "./film_line";
 import Blankspace from "./blankspace"
 import styles from "./styles/background.module.css"
 
-const API_URL = process.env.VERCEL_URL
+const API_URL = process.env.NEXT_PUBLIC_API_URL
 
 const getMovies = async () =>{
   try{
