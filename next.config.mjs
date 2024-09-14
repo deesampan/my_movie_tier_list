@@ -5,8 +5,8 @@ const nextConfig = {
         remotePatterns: [
         {
           protocol: "http",
-          hostname: process.env.NEXT_PUBLIC_API_URL,
-          port: "3000",
+          hostname: process.env.VERCEL_URL,
+          port: "",
         },
       ],
     },eslint:{
