@@ -4,7 +4,7 @@ import Top3 from "../top3"
 import RestRank from "../rest_rank";
 import styles from "../styles/background.module.css"
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL
+const API_URL = process.env.VERCEL_URL
 
 const getMovies = async () =>{
   try{

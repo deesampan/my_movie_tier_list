@@ -5,7 +5,7 @@ import RestRank from "../rest_rank";
 import styles from "../styles/background.module.css"
 import Series from "@/models/series";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL
+const API_URL = process.env.VERCEL_URL
 
 const getSeries = async () =>{
   try{
