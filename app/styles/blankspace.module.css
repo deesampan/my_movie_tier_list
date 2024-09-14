@@ -2,8 +2,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 480px;
-    margin-bottom: -80px;
+    margin-top: 490px;
+    margin-bottom: -90px;
     width: 100%;
 }
 .blankspace_pacman{
@@ -13,6 +13,7 @@
   margin-top: -50px;
   margin-bottom: -80px;
   width: 100%;
+  height: 350px;
 }
 .blankspace_line{
     display: flex;
@@ -29,7 +30,12 @@
 }
 
 .blankspace_pacman > h1{
-  font-size: 20px;
+  position: absolute;
+
+
+  font-size: 30px;
+  align-self: flex-end;
+
 }
 
 /* From Uiverse.io by mobinkakei */ 

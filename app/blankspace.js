@@ -26,8 +26,8 @@ const blankspace = ({animated}) => {
     }else{
         return(
             <div className={styles.blankspace_pacman}>
-                <h1>Deesampan</h1>
                 <div className={styles.pacman}></div>
+                <h1>Made By Master Deesampan😎🥨</h1>
             </div>
         )
     }
