@@ -21,7 +21,7 @@ const getCartoon = async () =>{
 
 const cartoon_page = async () => {
 
-  const {Cartoons} = await getCartoon();
+  const {Cartoons} = await getCartoon() ?? {};
 
   return (
     <div className={styles.grad_all}>
