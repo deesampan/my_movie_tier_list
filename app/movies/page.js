@@ -21,7 +21,7 @@ const getMovies = async () =>{
 
 const movies_page = async () => {
 
-  const {topics} = await getMovies() ?? {};
+  const {topics} = await getMovies();
   
   return (
     <div className={styles.grad_all}>

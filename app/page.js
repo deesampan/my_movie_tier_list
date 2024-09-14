@@ -45,9 +45,9 @@ const getCartoon = async () =>{
 
 export default async function Home() {
 
-  const {topics} = await getMovies() ?? {};
-  const {Seriess} = await getSeries() ?? {};
-  const {Cartoons} = await getCartoon() ?? {};
+  const {topics} = await getMovies();
+  const {Seriess} = await getSeries();
+  const {Cartoons} = await getCartoon();
   
   return (
     <div className={styles.grad}>
