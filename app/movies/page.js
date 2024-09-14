@@ -21,15 +21,15 @@ const getMovies = async () =>{
 
 const movies_page = async () => {
 
-  const {topics} = await getMovies();
+  // const {topics} = await getMovies();
   
   return (
     <div className={styles.grad_all}>
       <Title />
       <Navbar highlighted="movie"/>
 
-      <Top3 data={topics}/>
-      <RestRank data={topics}/>
+      {/* <Top3 data={topics}/>
+      <RestRank data={topics}/> */}
     </div>
   );
 }

@@ -45,9 +45,9 @@ const getCartoon = async () =>{
 
 export default async function Home() {
 
-  const {topics} = await getMovies();
-  const {Seriess} = await getSeries();
-  const {Cartoons} = await getCartoon();
+  // const {topics} = await getMovies();
+  // const {Seriess} = await getSeries();
+  // const {Cartoons} = await getCartoon();
   
   return (
     <div className={styles.grad}>
@@ -57,11 +57,11 @@ export default async function Home() {
 
       <Blankspace animated="true" />
 
-      <Film_line title="Movies🎬" linker="/movies" data={topics}/>
+      {/* <Film_line title="Movies🎬" linker="/movies" data={topics}/>
       <Blankspace animated="false" />
       <Film_line title="Series🎬" linker="/series" data={Seriess}/>
       <Blankspace animated="false" />
-      <Film_line title="Animations🎬" linker="/cartoon" data={Cartoons}/>
+      <Film_line title="Animations🎬" linker="/cartoon" data={Cartoons}/> */}
     </div>
   );
 }
