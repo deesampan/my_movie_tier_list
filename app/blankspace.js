@@ -23,7 +23,15 @@ const blankspace = ({animated}) => {
                 <div className={styles.shadow}></div></div>
             </div>
           );
-    }else{
+    }else if(animated=="justspace"){
+        return (
+    
+            <div className={styles.justspace}>
+                <h1>📝Your Creativity💌</h1>
+            </div>
+          );
+    }
+    else{
         return(
             <div className={styles.blankspace_pacman}>
                 <div className={styles.pacman}></div>

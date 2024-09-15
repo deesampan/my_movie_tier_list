@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&display=swap');
+
 .blankspace{
     display: flex;
     justify-content: center;
@@ -5,6 +7,18 @@
     margin-top: 490px;
     margin-bottom: -90px;
     width: 100%;
+}
+.justspace{
+  margin-top: 510px;
+  display: flex;
+  justify-content: center;
+}
+.justspace > h1{
+  font-size: 50px;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
 }
 .blankspace_pacman{
   display: flex;
