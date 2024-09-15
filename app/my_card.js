@@ -11,7 +11,7 @@ const MyCard = ({status,name,des}) =>{
                     <img src="/rick_n_morty.jpg"/>
                 </div>
                     <ul className={styles.socialMedia}>
-                        <li><img src="/edit-text.png" width={25}/></li>
+                        <li><Link href="/creator/create"><img src="/edit-text.png" width={25}/></Link></li>
                         <li><img src="/bin.png" width={25}/></li>
                     </ul>
                 <div className={styles.cardInfo}>
