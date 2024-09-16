@@ -1,7 +1,24 @@
+"use client"
+
 import styles from "./styles/mycard.module.css"
 import Link from "next/link";
 
-const MyCard = ({status,name,des}) =>{
+const MyCard = ({status,name,des,type,card_id}) =>{
+    const API_URL = process.env.NEXT_PUBLIC_API_URL
+
+
+
+    async function handleDelete(){
+        const comfirm = confirm(`Are You Sure?🤔 To Deleting {${name}}`)
+        if(comfirm){
+            const res = await fetch(`${API_URL}/api/my_movie?id=${card_id}`,{
+                method:"DELETE",
+            });
+
+            location.href="/creator"
+        }
+    }
+
     if(status == "card"){
         return(
             
@@ -12,7 +29,7 @@ const MyCard = ({status,name,des}) =>{
                 </div>
                     <ul className={styles.socialMedia}>
                         <li><Link href="/creator/create"><img src="/edit-text.png" width={25}/></Link></li>
-                        <li><img src="/bin.png" width={25}/></li>
+                        <li><button onClick={handleDelete}><img src="/bin.png" width={25}/></button></li>
                     </ul>
                 <div className={styles.cardInfo}>
                 <p className={styles.title}>{name}</p>
@@ -22,7 +39,12 @@ const MyCard = ({status,name,des}) =>{
         );
     }else if(status == "add"){
         return(
-            <Link href="/creator/create">
+            <Link href={{
+                pathname: '/creator/create',
+                query:{
+                    movie_type:type,
+                }
+            }}>
                 <div className={styles.card_add}>
                     <h1 className={styles.add_more}>Add More😻</h1>
                     <img src="/add.png" width={35}/>
@@ -34,7 +56,7 @@ const MyCard = ({status,name,des}) =>{
         return(
              
             <div className={styles.card_add}>
-                <h1 className={styles.add_more}>Maximum Data😢</h1>
+                <h1 className={styles.add_more}>You Reach The Limit Of Data😢</h1>
             </div>
         );
     }

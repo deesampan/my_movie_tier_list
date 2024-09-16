@@ -50,14 +50,19 @@
     margin-left: 30px;
     margin-top: 50px;
 }
-.imgBorder:hover > img{
+.imgBorder:hover > .img_animated{
     width: 30px;
 }
-
-.imgBorder > img{
-    position: absolute;
+.img_animated{
+  position: absolute;
     margin-top: 60px;
     transition: width .3s ease;
+}
+.img_show{
+  position: absolute;
+  height: 300px;
+  width: 240px;
+  border-radius: 8px;
 }
 .header{
     width: 100%;
@@ -97,6 +102,13 @@
     align-items: center;
 }
 
+.img_input{
+  background-color: black;
+  position: absolute;
+  width: 260px;
+  height: 320px;
+  opacity: 0%;
+}
 
 
 
