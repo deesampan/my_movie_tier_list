@@ -6,14 +6,17 @@ import styles from "../../styles/create.module.css";
 import Link from "next/link";
 import Image from "next/image";
 
-
-
-const Edit = async ({ searchParams }) => {
-
-
-
+const Edit = ({ searchParams }) => {
     const API_URL = process.env.NEXT_PUBLIC_API_URL;
     const movie_type_search = searchParams?.movie_type;
+    const card_id = searchParams?.card_id
+
+    const [name, setName] = useState("");
+    const [des, setDes] = useState("");
+    const [file, setFile] = useState(null);
+    const [preview, setPreview] = useState(null); // For storing the image preview
+    const [fileName, setFileName] = useState(""); // For storing the image preview
+    const [imger,setImger] = useState("")
 
     let api_movie_type = ""
     if(movie_type_search == "Movie"){
@@ -23,30 +26,6 @@ const Edit = async ({ searchParams }) => {
     }else if(movie_type_search == "Cartoon"){
         api_movie_type = "my_cartoon"
     }
-
-    const getFilm = async () =>{
-        try{
-          const res = await fetch(`${API_URL}/api/${api_movie_type}/${card_id}`
-              ,{
-              cache:"no-store"
-            }
-          );
-          if(!res.ok){
-            throw new Error("Failed to fetch movie")
-          }
-          console.log(res);
-          return res.json();
-        }catch(error){
-          console.log("Error on fetching data: ",error);
-        }
-      }
-
-
-
-    const [name, setName] = useState("");
-    const [des, setDes] = useState("");
-    const [file, setFile] = useState(null);
-    const [preview, setPreview] = useState(null); // For storing the image preview
 
     const onSubmit = async () => {
         if (!file) return;
@@ -71,6 +50,39 @@ const Edit = async ({ searchParams }) => {
         }
     };
 
+    const getFilm = async () =>{
+        try{
+          const res = await fetch(`${API_URL}/api/${api_movie_type}/${card_id}`);
+          if(!res.ok){
+            throw new Error("Failed to fetch cartoon")
+          }
+          return res.json();
+        }catch(error){
+          console.log("Error on fetching data: ",error);
+        }
+    }
+    const init_info =async()=>{
+        if(movie_type_search=="Movie"){
+            const {my_movie} = await getFilm();
+            setName(my_movie.movie_name)
+            setDes(my_movie.movie_des)
+            setImger(`/uploads/${my_movie.movie_url}`)
+        }else if(movie_type_search=="Series"){
+            const {my_serie} = await getFilm(); 
+            setName(my_serie.movie_name)
+            setDes(my_serie.movie_des)
+            console.log(my_serie.movie_url)
+            setImger(`/uploads/${my_serie.movie_url}`)
+        }else{
+            const {my_cartoon} = await getFilm();
+            setName(my_cartoon.movie_name)
+            setDes(my_cartoon.movie_des)
+            setImger(`/uploads/${my_cartoon.movie_url}`)
+        }
+    }
+
+    console.log(imger)
+
     // Trigger the upload automatically when the file is selected
     useEffect(() => {
         if (file) {
@@ -91,8 +103,16 @@ const Edit = async ({ searchParams }) => {
 
     const handleFileChange = (e) => {
         const selectedFile = e.target.files?.[0];
-        setFile(selectedFile); // Set the selected file and trigger the useEffect
+        if (selectedFile) {
+            setFile(selectedFile); // Set the selected file and trigger the useEffect
+    
+            // Get the file name
+            console.log(selectedFile.name);
+            // You can also store the file name in state if needed
+            setFileName(selectedFile.name);
+        }
     };
+    
 
     const handleCreate = async () => {
         if (!name || !des || !file) {
@@ -101,17 +121,18 @@ const Edit = async ({ searchParams }) => {
         }
 
         try {
-            const movie_name = name;
-            const movie_des = des;
-            const movie_url = preview;
+            const newName = name;
+            const newDes = des;
+            const newUrl = fileName;
+
             let movie_type = api_movie_type
             console.log("this is movie type : ", movie_type)
-            const res = await fetch(`${API_URL}/api/${api_movie_type}`, {
+            const res = await fetch(`${API_URL}/api/${api_movie_type}/${card_id}`, {
                 method: "PUT",
                 headers: {
                     "Content-type": "application/json"
                 },
-                body: JSON.stringify({ movie_name, movie_des, movie_url, movie_type:api_movie_type})
+                body: JSON.stringify({ newName, newDes, newUrl, movie_type:api_movie_type})
             });
 
             if (res.ok) {
@@ -125,7 +146,7 @@ const Edit = async ({ searchParams }) => {
     };
 
     return (
-        <div className={back_styles.all_black_style}>
+        <div className={back_styles.all_black_style} onLoad={init_info}>
             <div className={styles.container}>
                 <div className={styles.border}>
                     <div className={styles.header}>

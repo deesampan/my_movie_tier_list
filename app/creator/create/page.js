@@ -9,7 +9,6 @@ import Image from "next/image";
 const Create = ({ searchParams }) => {
     const API_URL = process.env.NEXT_PUBLIC_API_URL;
     const movie_type_search = searchParams?.movie_type;
-    const card_id = searchParams?.card_id;
 
     const [name, setName] = useState("");
     const [des, setDes] = useState("");
