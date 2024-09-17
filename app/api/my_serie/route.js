@@ -3,11 +3,11 @@ import MySeries from "@/models/my_serie";
 import { NextResponse } from "next/server";
 
 export async function POST(request){
-    const {movie_name,movie_url,movie_des} = await request.json();
+    const {movie_name,movie_url,movie_des,movie_type} = await request.json();
     
 
     await connectMongoDB();
-    await MySeries.create({movie_name,movie_url,movie_des})
+    await MySeries.create({movie_name,movie_url,movie_des,movie_type})
     return NextResponse.json({message:"My Series Created"},{status:201});
 }
 

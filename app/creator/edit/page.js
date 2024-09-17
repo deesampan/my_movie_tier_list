@@ -6,16 +6,47 @@ import styles from "../../styles/create.module.css";
 import Link from "next/link";
 import Image from "next/image";
 
-const Create = ({ searchParams }) => {
+
+
+const Edit = async ({ searchParams }) => {
+
+
+
     const API_URL = process.env.NEXT_PUBLIC_API_URL;
     const movie_type_search = searchParams?.movie_type;
-    const card_id = searchParams?.card_id;
+
+    let api_movie_type = ""
+    if(movie_type_search == "Movie"){
+        api_movie_type = "my_movie"
+    }else if(movie_type_search == "Series"){
+        api_movie_type = "my_serie"
+    }else if(movie_type_search == "Cartoon"){
+        api_movie_type = "my_cartoon"
+    }
+
+    const getFilm = async () =>{
+        try{
+          const res = await fetch(`${API_URL}/api/${api_movie_type}/${card_id}`
+              ,{
+              cache:"no-store"
+            }
+          );
+          if(!res.ok){
+            throw new Error("Failed to fetch movie")
+          }
+          console.log(res);
+          return res.json();
+        }catch(error){
+          console.log("Error on fetching data: ",error);
+        }
+      }
+
+
 
     const [name, setName] = useState("");
     const [des, setDes] = useState("");
     const [file, setFile] = useState(null);
     const [preview, setPreview] = useState(null); // For storing the image preview
-    const [fileName, setFileName] = useState(""); // For storing the image preview
 
     const onSubmit = async () => {
         if (!file) return;
@@ -60,16 +91,8 @@ const Create = ({ searchParams }) => {
 
     const handleFileChange = (e) => {
         const selectedFile = e.target.files?.[0];
-        if (selectedFile) {
-            setFile(selectedFile); // Set the selected file and trigger the useEffect
-    
-            // Get the file name
-            console.log(selectedFile.name);
-            // You can also store the file name in state if needed
-            setFileName(selectedFile.name);
-        }
+        setFile(selectedFile); // Set the selected file and trigger the useEffect
     };
-    
 
     const handleCreate = async () => {
         if (!name || !des || !file) {
@@ -80,19 +103,11 @@ const Create = ({ searchParams }) => {
         try {
             const movie_name = name;
             const movie_des = des;
-            const movie_url = fileName;
-            let api_movie_type = ""
-            if(movie_type_search == "Movie"){
-                api_movie_type = "my_movie"
-            }else if(movie_type_search == "Series"){
-                api_movie_type = "my_serie"
-            }else if(movie_type_search == "Cartoon"){
-                api_movie_type = "my_cartoon"
-            }
+            const movie_url = preview;
             let movie_type = api_movie_type
             console.log("this is movie type : ", movie_type)
             const res = await fetch(`${API_URL}/api/${api_movie_type}`, {
-                method: "POST",
+                method: "PUT",
                 headers: {
                     "Content-type": "application/json"
                 },
@@ -187,7 +202,7 @@ const Create = ({ searchParams }) => {
                         </button>
 
                         <button className={styles.buttoner} onClick={handleCreate}>
-                            <span className={styles.button_top}>Create✅</span>
+                            <span className={styles.button_top}>Edit✅</span>
                         </button>
                     </div>
                 </div>
@@ -196,4 +211,4 @@ const Create = ({ searchParams }) => {
     );
 };
 
-export default Create;
+export default Edit;

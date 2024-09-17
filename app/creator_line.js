@@ -15,7 +15,7 @@ const CreatorLine = ({header,type,data}) =>{
 
                     {
                         data.map((i)=>(
-                            <MyCard status="card" name={i.movie_name} des={i.movie_des} card_id={i._id}/>
+                            <MyCard status="card" name={i.movie_name} des={i.movie_des} card_id={i._id} url={i.movie_url} movie_type={i.movie_type} type={type}/>
                         ))
                     }
                     

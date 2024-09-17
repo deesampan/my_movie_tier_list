@@ -3,7 +3,7 @@
 import styles from "./styles/mycard.module.css"
 import Link from "next/link";
 
-const MyCard = ({status,name,des,type,card_id}) =>{
+const MyCard = ({status,name,des,type,url,card_id,movie_type}) =>{
     const API_URL = process.env.NEXT_PUBLIC_API_URL
 
 
@@ -11,13 +11,14 @@ const MyCard = ({status,name,des,type,card_id}) =>{
     async function handleDelete(){
         const comfirm = confirm(`Are You Sure?🤔 To Deleting {${name}}`)
         if(comfirm){
-            const res = await fetch(`${API_URL}/api/my_movie?id=${card_id}`,{
+            const res = await fetch(`${API_URL}/api/${movie_type}?id=${card_id}`,{
                 method:"DELETE",
             });
 
             location.href="/creator"
         }
     }
+    const data_url = `/uploads/${url}`
 
     if(status == "card"){
         return(
@@ -25,10 +26,16 @@ const MyCard = ({status,name,des,type,card_id}) =>{
             <div className={styles.card}>
                 <h1>1</h1>
                 <div className={styles.cardImg}> 
-                    <img src="/rick_n_morty.jpg"/>
+                    <img src={data_url}/>
                 </div>
                     <ul className={styles.socialMedia}>
-                        <li><Link href="/creator/create"><img src="/edit-text.png" width={25}/></Link></li>
+                        <li><Link href={{
+                                pathname: '/creator/edit',
+                                query:{
+                                    movie_type:type,
+                                    card_id:card_id
+                                }
+                            }}><img src="/edit-text.png" width={25}/></Link></li>
                         <li><button onClick={handleDelete}><img src="/bin.png" width={25}/></button></li>
                     </ul>
                 <div className={styles.cardInfo}>
