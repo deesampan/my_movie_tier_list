@@ -10,6 +10,6 @@ const movieSchema = new Schema(
 );
 
 // Check if the model is already defined, and if not, define it
-const MyMovie = mongoose.models.my_movie || mongoose.model('my_movie', movieSchema);
+const MySeries = mongoose.models.my_serie || mongoose.model('my_serie', movieSchema);
 
-module.exports = MyMovie;
+module.exports = MySeries;

@@ -1,5 +1,5 @@
 import connectMongoDB from "@/lib/dbConnect";
-import MyMovie from "@/models/my_movie";
+import MySeries from "@/models/my_serie";
 import { NextResponse } from "next/server";
 
 export async function POST(request){
@@ -7,19 +7,19 @@ export async function POST(request){
     
 
     await connectMongoDB();
-    await MyMovie.create({movie_name,movie_url,movie_des})
-    return NextResponse.json({message:"My Movie Created"},{status:201});
+    await MySeries.create({movie_name,movie_url,movie_des})
+    return NextResponse.json({message:"My Series Created"},{status:201});
 }
 
 export async function GET(){
     await connectMongoDB();
-    const my_movie = await MyMovie.find()
-    return NextResponse.json({my_movie})
+    const my_serie = await MySeries.find()
+    return NextResponse.json({my_serie})
 }
 
 export async function DELETE(request){
     const id = request.nextUrl.searchParams.get("id");
     await connectMongoDB();
-    await MyMovie.findByIdAndDelete(id);
-    return NextResponse.json({message: "My Movie deleted"},{status:200})
+    await MySeries.findByIdAndDelete(id);
+    return NextResponse.json({message: "My Series deleted"},{status:200})
 }

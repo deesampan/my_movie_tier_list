@@ -8,9 +8,43 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL
 
 const getMovies = async () =>{
   try{
-    const res = await fetch(`${API_URL}/api/my_movie`,{
-      cache:"no-store"
-    });
+    const res = await fetch(`${API_URL}/api/my_movie`
+        ,{
+        cache:"no-store"
+      }
+    );
+    if(!res.ok){
+      throw new Error("Failed to fetch movie")
+    }
+    console.log(res);
+    return res.json();
+  }catch(error){
+    console.log("Error on fetching data: ",error);
+  }
+}
+const getSeries = async () =>{
+  try{
+    const res = await fetch(`${API_URL}/api/my_serie`
+        ,{
+        cache:"no-store"
+      }
+    );
+    if(!res.ok){
+      throw new Error("Failed to fetch movie")
+    }
+    console.log(res);
+    return res.json();
+  }catch(error){
+    console.log("Error on fetching data: ",error);
+  }
+}
+const getCartoon = async () =>{
+  try{
+    const res = await fetch(`${API_URL}/api/my_cartoon`
+        ,{
+        cache:"no-store"
+      }
+    );
     if(!res.ok){
       throw new Error("Failed to fetch movie")
     }
@@ -24,10 +58,9 @@ const getMovies = async () =>{
 
 const creator_page = async (req,res) => {
 
-  const {topics} = await getMovies() || {};
-  const movie_data = topics.filter(movie => movie.movie_type === 'Movie');
-  const serie_data = topics.filter(movie => movie.movie_type === 'Series');
-  const cartoon_data = topics.filter(movie => movie.movie_type === 'Cartoon');
+  const {my_movie} = await getMovies() || {};
+  const {my_serie} = await getSeries() || {};
+  const {my_cartoon} = await getCartoon() || {};
 
   return(
     <div className={styles.grad_all}>
@@ -36,9 +69,9 @@ const creator_page = async (req,res) => {
 
 
       <Blankspace animated="justspace"/>
-      <CreatorLine header="My Movie🥪" type="Movie" data={movie_data}/>
-      <CreatorLine header="My Series🍙" type="Series" data={serie_data}/>
-      <CreatorLine header="My Cartoon🍟" type="Cartoon" data={cartoon_data}/>
+      <CreatorLine header="My Movie🥪" type="Movie" data={my_movie}/>
+      <CreatorLine header="My Series🍙" type="Series" data={my_serie}/>
+      <CreatorLine header="My Cartoon🍟" type="Cartoon" data={my_cartoon}/>
     </div>
   )
 }

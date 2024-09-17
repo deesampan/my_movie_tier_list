@@ -1,5 +1,5 @@
 import connectMongoDB from "@/lib/dbConnect";
-import MyMovie from "@/models/my_movie";
+import MySeries from "@/models/my_serie";
 import { NextResponse } from "next/server";
 
 export async function PUT(request,{params}){
@@ -7,13 +7,13 @@ export async function PUT(request,{params}){
     console.log({id});
     const {newName : movie_name, newUrl : movie_url,newDes: movie_des} = await request.json();
     await connectMongoDB();
-    await MyMovie.findByIdAndUpdate(id,{movie_name,movie_url,movie_des});
+    await MySeries.findByIdAndUpdate(id,{movie_name,movie_url,movie_des});
     return NextResponse.json({message:"My Movie Updated"},{status:200});
 }
 
 export async function GET(request,{params}){
     const {id} = params;
     await connectMongoDB();
-    const my_movie = await MyMovie.findOne({_id:id});
-    return NextResponse.json({my_movie},{status:200})
+    const my_serie = await MySeries.findOne({_id:id});
+    return NextResponse.json({my_serie},{status:200})
 }
