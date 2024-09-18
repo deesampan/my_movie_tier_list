@@ -15,7 +15,7 @@ const getMovies = async () =>{
     const res = await fetch(`${API_URL}/api/my_movie`
         ,{
         cache:'force-cache' | 'no-store'
-      }
+      },{ next: { revalidate: false | 0 | number } }
     );
     if(!res.ok){
       throw new Error("Failed to fetch movie")
@@ -31,7 +31,7 @@ const getSeries = async () =>{
     const res = await fetch(`${API_URL}/api/my_serie`
         ,{
         cache:'force-cache' | 'no-store'
-      }
+      },{ next: { revalidate: false | 0 | number } }
     );
     if(!res.ok){
       throw new Error("Failed to fetch movie")
@@ -47,7 +47,7 @@ const getCartoon = async () =>{
     const res = await fetch(`${API_URL}/api/my_cartoon`
         ,{
         cache:'force-cache' | 'no-store'
-      }
+      },{ next: { revalidate: false | 0 | number } }
     );
     if(!res.ok){
       throw new Error("Failed to fetch movie")
