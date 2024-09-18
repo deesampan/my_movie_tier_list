@@ -9,7 +9,9 @@ const CoverCard = ({name,index,des,url}) => {
           <div className={styles.backContent}>
             {/* back content here */}
             <h1 className={styles.indexText}>#{index}</h1>
-            <Image className={styles.imageCover} src={url} width={255} height={290} alt=""/>
+            <Image className={styles.imageCover} src={url} width={255} height={290} alt="" style={{
+          objectFit: 'cover',
+        }}/>
           </div>
         </div>
 

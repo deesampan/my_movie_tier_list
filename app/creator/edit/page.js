@@ -115,7 +115,7 @@ const Edit = ({ searchParams }) => {
     
 
     const handleCreate = async () => {
-        if (!name || !des || !file) {
+        if (!name || !des) {
             alert("You need to fill your film's data into the box first na🥺");
             return;
         }
@@ -132,7 +132,7 @@ const Edit = ({ searchParams }) => {
                 headers: {
                     "Content-type": "application/json"
                 },
-                body: JSON.stringify({ newName, newDes, newUrl, movie_type:api_movie_type})
+                body: JSON.stringify({ newName, newDes, movie_type:api_movie_type})
             });
 
             if (res.ok) {
@@ -160,21 +160,14 @@ const Edit = ({ searchParams }) => {
                                 <img className={styles.img_animated} src="/upload.png" width={25} />
                                 
                                 {/* Display dynamic image preview */}
-                                {preview ? (
-                                    <Image className={styles.img_show} src={preview} width={260} height={320} id="profile-pic" alt="Image Preview" />
+                                {imger ? (
+                                    <Image className={styles.img_show} src={imger} width={260} height={320} id="profile-pic" alt="Image Preview" />
                                 ) : (
                                     <Image className={styles.img_show_lock} src="" width={260} height={320} id="profile-pic" alt="Default Image" />
                                 )}
 
                                 {/* for upload image */}
-                                <form className={styles.former}>
-                                    <input
-                                        className={styles.img_input}
-                                        type="file"
-                                        accept="image/jpeg, image/png, image/jpg"
-                                        onChange={handleFileChange} // Trigger upload when file is selected
-                                    />
-                                </form>
+                                
 
                                 {/* \\\\\\\\\\\\\\ */}
                             </div>
