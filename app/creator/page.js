@@ -4,13 +4,17 @@ import styles from "../styles/background.module.css"
 import CreatorLine from "../creator_line";
 import Blankspace from "../blankspace";
 
+//fix cache : no-store
+import MyMovie from "@/models/my_movie";
+import {connectMongoDB} from "@/lib/dbConnect";
+
 const API_URL = process.env.NEXT_PUBLIC_API_URL
 
 const getMovies = async () =>{
   try{
     const res = await fetch(`${API_URL}/api/my_movie`
         ,{
-        cache:"no-store"
+        cache:'force-cache' | 'no-store'
       }
     );
     if(!res.ok){
@@ -26,7 +30,7 @@ const getSeries = async () =>{
   try{
     const res = await fetch(`${API_URL}/api/my_serie`
         ,{
-        cache:"no-store"
+        cache:'force-cache' | 'no-store'
       }
     );
     if(!res.ok){
@@ -42,7 +46,7 @@ const getCartoon = async () =>{
   try{
     const res = await fetch(`${API_URL}/api/my_cartoon`
         ,{
-        cache:"no-store"
+        cache:'force-cache' | 'no-store'
       }
     );
     if(!res.ok){
