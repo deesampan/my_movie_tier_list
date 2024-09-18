@@ -8,15 +8,14 @@ import Blankspace from "../blankspace";
 import MyMovie from "@/models/my_movie";
 import {connectMongoDB} from "@/lib/dbConnect";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL
 
+
+const API_URL = process.env.NEXT_PUBLIC_API_URL
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 const getMovies = async () =>{
   try{
-    const res = await fetch(`${API_URL}/api/my_movie`
-        ,{
-        cache:'force-cache' | 'no-store'
-      },{ next: { revalidate: false | 0 | number } }
-    );
+    const res = await fetch(`${API_URL}/api/my_movie`);
     if(!res.ok){
       throw new Error("Failed to fetch movie")
     }
@@ -28,11 +27,7 @@ const getMovies = async () =>{
 }
 const getSeries = async () =>{
   try{
-    const res = await fetch(`${API_URL}/api/my_serie`
-        ,{
-        cache:'force-cache' | 'no-store'
-      },{ next: { revalidate: false | 0 | number } }
-    );
+    const res = await fetch(`${API_URL}/api/my_serie`);
     if(!res.ok){
       throw new Error("Failed to fetch movie")
     }
@@ -44,11 +39,7 @@ const getSeries = async () =>{
 }
 const getCartoon = async () =>{
   try{
-    const res = await fetch(`${API_URL}/api/my_cartoon`
-        ,{
-        cache:'force-cache' | 'no-store'
-      },{ next: { revalidate: false | 0 | number } }
-    );
+    const res = await fetch(`${API_URL}/api/my_cartoon`);
     if(!res.ok){
       throw new Error("Failed to fetch movie")
     }
