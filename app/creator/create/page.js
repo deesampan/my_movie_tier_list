@@ -6,6 +6,15 @@ import styles from "../../styles/create.module.css";
 import Link from "next/link";
 import Image from "next/image";
 
+//uplaoder
+
+// import { UploadButton } from "../../utils/uploadthing";
+const { UploadButton } = require("../../utils/uploadthing");
+
+import "@uploadthing/react/styles.css";
+
+
+
 const Create = ({ searchParams }) => {
     const API_URL = process.env.NEXT_PUBLIC_API_URL;
     const movie_type_search = searchParams?.movie_type;
@@ -15,6 +24,7 @@ const Create = ({ searchParams }) => {
     const [file, setFile] = useState(null);
     const [preview, setPreview] = useState(null); // For storing the image preview
     const [fileName, setFileName] = useState(""); // For storing the image preview
+    const [imgUrl,setImgUrl] = useState(null)
 
     const onSubmit = async () => {
         if (!file) return;
@@ -71,7 +81,7 @@ const Create = ({ searchParams }) => {
     
 
     const handleCreate = async () => {
-        if (!name || !des || !file) {
+        if (!name || !des || !imgUrl) {
             alert("You need to fill your film's data into the box first na🥺");
             return;
         }
@@ -79,7 +89,7 @@ const Create = ({ searchParams }) => {
         try {
             const movie_name = name;
             const movie_des = des;
-            const movie_url = fileName;
+            const movie_url = imgUrl;
             let api_movie_type = ""
             if(movie_type_search == "Movie"){
                 api_movie_type = "my_movie"
@@ -123,23 +133,40 @@ const Create = ({ searchParams }) => {
                                 <img className={styles.img_animated} src="/upload.png" width={25} />
                                 
                                 {/* Display dynamic image preview */}
-                                {preview ? (
-                                    <Image className={styles.img_show} src={preview} width={260} height={320} id="profile-pic" alt="Image Preview" />
+                                {imgUrl ? (
+                                    <Image className={styles.img_show} src={imgUrl} width={260} height={320} id="profile-pic" alt="Image Preview" />
                                 ) : (
                                     <Image className={styles.img_show_lock} src="" width={260} height={320} id="profile-pic" alt="Default Image" />
                                 )}
 
                                 {/* for upload image */}
-                                <form className={styles.former}>
+                                {/* <form className={styles.former}>
                                     <input
                                         className={styles.img_input}
                                         type="file"
                                         accept="image/jpeg, image/png, image/jpg"
                                         onChange={handleFileChange} // Trigger upload when file is selected
                                     />
-                                </form>
+                                </form> */}
 
                                 {/* \\\\\\\\\\\\\\ */}
+                                <UploadButton
+                                    endpoint="imageUploader"
+                                    onClientUploadComplete={(res) => {
+                                        // Do something with the response
+                                        console.log("Files: ", res);
+                                        const resUrl = res[0].appUrl
+                                        setImgUrl(resUrl)
+                                        alert("Upload Completed");
+                                    }}
+                                    onUploadError={(error) => {
+                                        // Do something with the error.
+                                        alert(`ERROR! ${error.message}`);
+                                    }}
+                                    className={styles.img_input}
+                                    />
+
+                                
                             </div>
                         </div>
                         <div className={styles.editorMain}>

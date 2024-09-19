@@ -18,7 +18,7 @@ const MyCard = ({status,name,des,type,url,card_id,movie_type}) =>{
             location.href="/creator"
         }
     }
-    const data_url = `/uploads/${url}`
+    const data_url = url
 
     if(status == "card"){
         return(

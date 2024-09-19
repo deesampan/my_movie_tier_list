@@ -17,7 +17,7 @@ const getMovies = async () =>{
   try{
     const res = await fetch(`${API_URL}/api/my_movie`);
     if(!res.ok){
-      throw new Error("Failed to fetch movie")
+      throw new Error("Faileder to fetch movie")
     }
     console.log(res);
     return res.json();

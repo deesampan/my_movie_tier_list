@@ -66,18 +66,18 @@ const Edit = ({ searchParams }) => {
             const {my_movie} = await getFilm();
             setName(my_movie.movie_name)
             setDes(my_movie.movie_des)
-            setImger(`/uploads/${my_movie.movie_url}`)
+            setImger(my_movie.movie_url)
         }else if(movie_type_search=="Series"){
             const {my_serie} = await getFilm(); 
             setName(my_serie.movie_name)
             setDes(my_serie.movie_des)
             console.log(my_serie.movie_url)
-            setImger(`/uploads/${my_serie.movie_url}`)
+            setImger(my_movie.movie_url)
         }else{
             const {my_cartoon} = await getFilm();
             setName(my_cartoon.movie_name)
             setDes(my_cartoon.movie_des)
-            setImger(`/uploads/${my_cartoon.movie_url}`)
+            setImger(my_movie.movie_url)
         }
     }
 

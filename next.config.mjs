@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-      domains: ['i.ibb.co'], // Add the allowed external domains here
+      domains: ['i.ibb.co','utfs.io'], // Add the allowed external domains here
         remotePatterns: [
         {
           protocol: "http",

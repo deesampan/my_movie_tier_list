@@ -111,13 +111,16 @@
 }
 
 .img_input{
-  background-color: rgb(255, 0, 0);
+  margin-top: 400px;
+  /* background-color: rgb(255, 0, 0); */
   position: absolute;
   width: 260px;
   height: 320px;
-  opacity: 0%;
+  opacity: 100%;
 }
 .former{
+  margin-top: 500px;
+
   position: absolute;
   z-index: 900;
   display: flex;
