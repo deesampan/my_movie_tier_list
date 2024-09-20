@@ -30,6 +30,13 @@ const blankspace = ({animated}) => {
                 <h1>📝Your Creativity💌</h1>
             </div>
           );
+    }else if(animated=="warning"){
+        return (
+    
+            <div className={styles.justwarn}>
+                <h1>🔰This is A Public Database. Everything you post, everyone can see it🙈</h1>
+            </div>
+          );
     }
     else{
         return(

@@ -64,6 +64,7 @@ const creator_page = async (req,res) => {
 
 
       <Blankspace animated="justspace"/>
+      <Blankspace animated="warning"/>
       <CreatorLine header="My Movie🥪" type="Movie" data={my_movie}/>
       <CreatorLine header="My Series🍙" type="Series" data={my_serie}/>
       <CreatorLine header="My Cartoon🍟" type="Cartoon" data={my_cartoon}/>

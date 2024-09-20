@@ -13,8 +13,21 @@
   display: flex;
   justify-content: center;
 }
+
 .justspace > h1{
   font-size: 50px;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+}
+.justwarn{
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+}
+.justwarn > h1{
+  font-size: 20px;
     font-family: "Playfair Display", serif;
     font-optical-sizing: auto;
     font-weight: 900;
