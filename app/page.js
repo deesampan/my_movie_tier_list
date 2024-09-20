@@ -61,7 +61,7 @@ export default async function Home() {
       <Blankspace animated="false" />
       <Film_line title="Series🍇" linker="/series" data={Seriess}/>
       <Blankspace animated="false" />
-      <Film_line title="Animations🥦" linker="/cartoon" data={Cartoons}/>
+      <Film_line title="Cartoons🥦" linker="/cartoon" data={Cartoons}/>
 
 
       <Blankspace animated="true" />
