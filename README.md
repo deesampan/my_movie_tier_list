@@ -4,9 +4,9 @@
 
 ## Features
 
--Create your own movie list!
--There'are public database, go see your friend's movie!
--Fetching/ Posting/ Deleting your data!
+  -Create your own movie list!
+  -There'are public database, go see your friend's movie!
+  -Fetching/ Posting/ Deleting your data!
 
 ## The Website
 
