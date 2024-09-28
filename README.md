@@ -1,4 +1,3 @@
-![image](https://github.com/user-attachments/assets/391edfac-28a6-4de9-93d8-663c00db24fc)
 # 🎥My Movie Tier List🎬
 
 
