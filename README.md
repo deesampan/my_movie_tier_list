@@ -7,6 +7,10 @@
   - There'are public database, go see your friend's movie!
   - Fetching/ Posting/ Deleting your data!
 
+## Description
+  - This web showing my favorite films, and you can also put yours too, whether of Movies / Series / Cartoon.
+You can Create, Update or Delete on your own!
+
 ## The Website
 
   Go check out the website page [https://deesampan.github.io/car_analytics/](https://my-movie-tier-list.vercel.app/)
